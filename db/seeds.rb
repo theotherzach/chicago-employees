@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
+
+require 'csv'
+
+file = Rails.root.join('db', 'Current_Employee_Names__Salaries__and_Position_Titles.csv')
+
+CSV.foreach(file, headers: true) do |row|
+  salary = row["Employee Annual Salary"].gsub(/[^\d\.]/, '').to_i
+
+  Employee.create({
+    name: row["Name"],
+    title: row["Position Title"],
+    department: row["Department"],
+    salary: salary
+  })
+end
+
+p "There are now #{Employee.all.count} employees in the database."
