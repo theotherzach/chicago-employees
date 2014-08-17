@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   resources :employees, only: [:index]
 
+  namespace :api do
+    resources :employees, only: [:index]
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
