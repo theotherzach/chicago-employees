@@ -4,7 +4,7 @@
 - bundle, migrate, and seed
 
 ## Challenges
-- Use ng-init to “bootstrap” 10 records so users have something to look at while waiting for ajax to complete.
+- Use ng-init to “bootstrap” 10 records so users have something to look at while waiting for ajax to complete. [video](http://youtu.be/7kECdEe2jpI)
 - Make a get request to /api/departments and add autocomplete to the filter.  http://viralpatel.net/blogs/html5-datalist-example/ 
 - Install will_paginate https://github.com/mislav/will_paginate
 - Replace limit(1000) in Api::EmployeesController with paginate(:all, per_page: 1000, page: 1)
