@@ -1,5 +1,16 @@
 
-<div ng-controller="employeesCtrl">
-{{ 1 + 1 }}
+<div class="panel" ng-controller="employeesCtrl">
+  <div class="panel-body">
+  </div>
+
+  <ul class="list-group">
+  <li class="list-group-item" ng-repeat="employee in employees">
+      <p>{{ employee.name }}</p>
+      <p><strong>Annual Salary:</strong> {{ employee.salary | currency }}</p>
+      <p>{{ employee.title }}, {{ employee.department }}</p>
+  </li>
+
+
+
 </div>
 
