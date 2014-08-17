@@ -32,6 +32,10 @@
   angular.module("app").controller("employeesCtrl", function ($scope, $http) {
     $scope.page = 1;
 
+    $scope.init = function (stuff) {
+      $scope.employees = stuff.employees;
+    }
+
     $http.get("/api/employees").then(function (response) {
       $scope.employees = response.data;
     });

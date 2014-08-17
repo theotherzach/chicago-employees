@@ -1,5 +1,4 @@
-
-<div class="panel" ng-controller="employeesCtrl">
+<div class="panel" ng-controller="employeesCtrl" ng-init="init({ employees: <%= @employees %> })">
 
 <ul class="pager">
   <li class="previous"><a href="">&larr; Previous Page</a></li>
