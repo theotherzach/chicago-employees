@@ -1,16 +1,21 @@
 
 <div class="panel" ng-controller="employeesCtrl">
-  <div class="panel-body">
-  </div>
+
+<ul class="pager">
+  <li class="previous"><a href="">&larr; Previous Page</a></li>
+  <li><input ng-model="deptQuery" placeholder="Department"></li>
+  <span class="label label-primary">Page: {{ page }}</span>
+  <li class="next"><a href="">Next Page &rarr;</a></li>
+</ul>
 
   <ul class="list-group">
-  <li class="list-group-item" ng-repeat="employee in employees">
-      <p>{{ employee.name }}</p>
-      <p><strong>Annual Salary:</strong> {{ employee.salary | currency }}</p>
-      <p>{{ employee.title }}, {{ employee.department }}</p>
-  </li>
-
-
+    <li class="list-group-item" ng-repeat="employee in employees | filter:{ department: deptQuery }">
+    <span>{{ employee.name }}</span>
+    <span class="pull-right">{{ employee.department }}</span>
+    <span>{{ employee.title }}</span>
+    <p> <strong>Annual Salary:</strong> {{ employee.salary | currency }}</p>
+    </li>
+  </ul>
 
 </div>
 

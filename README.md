@@ -4,9 +4,9 @@
 - bundle, migrate, and seed
 
 ## Challenges
-- Use ng-repeat to render a table of employees in `/employees`
-- Add filtering but not sorting.
-- Use Bootstrap’s active class to let the user know when they’re in the employees route.
-- Use this example and /api/departments to autocomplete add autocomplete to the filter.  http://viralpatel.net/blogs/html5-datalist-example/
-- Add pagination by studying http://bit.ly/ng-pagination 
-- Remove limit(100) from Api::EmployeesController#index
+- Make a get request to /api/departments and add autocomplete to the filter.  http://viralpatel.net/blogs/html5-datalist-example/ 
+- Use ng-init to “bootstrap” 10 records so users have something to look at while waiting for ajax to complete.
+- Install will_paginate https://github.com/mislav/will_paginate
+- Replace limit(1000) in Api::EmployeesController with paginate(:all, per_page: 1000, page: 1)
+- Add a page parameter to the /api/employees get request
+- Have Api::EmployeesController respond with the proper page #.

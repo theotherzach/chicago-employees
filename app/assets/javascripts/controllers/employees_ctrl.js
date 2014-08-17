@@ -30,7 +30,7 @@
 
   //|module object=====|method====|argument1======|argument2================
   angular.module("app").controller("employeesCtrl", function ($scope, $http) {
-    $scope.letters = "abcdefghijklmnopqurstuvwxyz".split('')
+    $scope.page = 1;
 
     $http.get("/api/employees").then(function (response) {
       $scope.employees = response.data;
